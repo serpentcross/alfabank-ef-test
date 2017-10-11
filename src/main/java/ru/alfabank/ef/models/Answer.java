@@ -5,13 +5,11 @@ import lombok.Setter;
 
 public class Answer {
 
-    public Answer() {
-
+    public Answer(String name, int code) {
+        this.name = name;
+        this.code = code;
     }
 
-    public Answer(Result result) {
-        this.result = result;
-    }
-
-    @Getter @Setter private Result result;
+    @Getter @Setter private String name;
+    @Getter @Setter private int code;
 }

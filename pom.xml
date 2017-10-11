@@ -74,23 +74,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-			    <artifactId>maven-clean-plugin</artifactId>
-			    <version>3.0.0</version>
-			    <configuration>
-				<filesets>
-				    <fileset>
-					<directory>node_modules</directory>
-					<includes>
-        				    <include>src/main/resources/static/bundle.js</include>
-        				    <include>src/main/resources/static/index.html</include>
-        				    <include>src/main/resources/static/styles.css</include>
-        				</includes>
-					<followSymlinks>false</followSymlinks>
-				    </fileset>
-				</filesets>
-			    </configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>

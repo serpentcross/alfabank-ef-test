@@ -1,7 +1,7 @@
-import { TEST_ACTION } from '../constants/actions';
-import superagent from 'superagent';
+import { TEST_ACTION } from '../constants/actions'
+import superagent from 'superagent'
 
-const testimiddleware = store => next => action => {
+const testmiddleware = store => next => action => {
 
     if (action.type !== TEST_ACTION) {
         return next(action);
@@ -12,7 +12,7 @@ const testimiddleware = store => next => action => {
 
     let state = store.getState();
 
-    var dataFetch = state.form.testForm.values;
+    let dataFetch = state.form.testForm.values;
 
     if (!action.value) {
         store.dispatch({
@@ -28,7 +28,7 @@ const testimiddleware = store => next => action => {
     });
 
     superagent
-        .get('/msisdns')
+        .get('/testep')
         .set('Content-Type', 'text/html; charset=utf-8')
         .query(dataFetch)
         .timeout(10000)
@@ -46,4 +46,4 @@ const testimiddleware = store => next => action => {
     return 1;
 };
 
-export default testimiddleware;
+export default testmiddleware;

@@ -12,8 +12,6 @@ import FormField from 'arui-feather/form-field'
 import Input from 'arui-feather/input'
 import Label from 'arui-feather/label'
 
-
-import { autobind } from 'core-decorators';
 import { inputField } from '../../utils/componentFactory'
 
 let formConfig = {
@@ -64,11 +62,7 @@ class AuthForm extends React.Component {
 
     renderFinalResult() {
 
-        for (var key in this.props.statusResp) {
-            if(key === 'status') {
-                foundStatus = this.props.statusResp['msisdn'] + ' - ' + this.props.statusResp[key]['name'];
-            }
-        }
+        foundStatus = this.props.statusResp;
 
         return (this.props.answer === true ) &&
             <div>

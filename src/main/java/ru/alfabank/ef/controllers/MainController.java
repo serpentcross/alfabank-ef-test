@@ -25,6 +25,7 @@ public class MainController {
     public String mainPage(Model model) throws JsonProcessingException, ScriptException, FileNotFoundException {
 
         String renderedHTML = react.renderEntryPoint();
+
         model.addAttribute("content", renderedHTML);
 
         return "index";
